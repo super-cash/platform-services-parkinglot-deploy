@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parkinglots-service
+spec:
+  template:
+    spec:
+      containers:
+        - name: parkinglots-service
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: observed,dev
+
+            - name: CASH_SUPER_PLATFORM_CLIENT_ORCHESTRATOR_BASEURL
+              value: http://orchestrator:8501
+            
+            # Postgres database connectivity from the secret created by the postgres object
+
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://supercash-postgres-server-aws-sae1-prdt-ppd-dev:5432/supercash?createDatabaseIfNotExist=true
+
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: supercash.supercash-postgres-server-aws-sae1-prdt-ppd-dev.credentials.postgresql.acid.zalan.do
+                  key: username
+
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: supercash.supercash-postgres-server-aws-sae1-prdt-ppd-dev.credentials.postgresql.acid.zalan.do
+                  key: password
