@@ -1,0 +1,25 @@
+####
+#### https://github.com/larsks/argocd-apps/blob/dc44f35e14e861f5b5503443d31a40eed0f4cb41/app-of-apps/app-of-apps-curator.yaml
+####
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: supercash-parkinglots-service-aws-sae1-ppd-dev
+  namespace: argocd
+spec:
+  destination:
+    namespace: supercash-aws-sae1-prdt-ppd-dev
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: ssh://git@gitlab.com/supercash/services-deploy/parkinglots-service-deploy.git
+    path: env/aws-sae1-prdt-ppd-dev
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+    - Validate=false
+    - ApplyOutOfSyncOnly=true
