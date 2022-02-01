@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    cash.super.service: parkinglots-service
+  name: parkinglots-service
+spec:
+  selector:
+    cash.super.service: parkinglots-service
+  ports:
+    - name: api
+      port: 80
+      targetPort: 8082

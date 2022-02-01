@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: parkinglots-service
+spec:
+  template:
+    spec:
+      imagePullSecrets:
+        - name: parkinglots-service
+      containers:
+        - name: parkinglots-service
+          image: registry.gitlab.com/supercash/services/parkinglots-service
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8082
