@@ -2,21 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: parkinglots-service
+  labels:
+    app.super.cash/service: parkinglots-service
 spec:
   replicas: 1
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: parkinglots-service
   strategy:
+    type: RollingUpdate
     rollingUpdate:
       maxSurge: 25%
       maxUnavailable: 25%
-    type: RollingUpdate
+  selector:
+    matchLabels:
+      app.super.cash/service: parkinglots-service
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: parkinglots-service
+        app.super.cash/service: parkinglots-service
     spec:
       nodeSelector:
         super.cash-worker_group-name: services
-      restartPolicy: Always

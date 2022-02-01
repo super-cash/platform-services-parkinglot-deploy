@@ -1,13 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    cash.super.service: parkinglots-service
   name: parkinglots-service
+  labels:
+    app.super.cash/service: parkinglots-service
 spec:
-  selector:
-    cash.super.service: parkinglots-service
+  type: ClusterIP
   ports:
-    - name: api
-      port: 80
-      targetPort: 8082
+  - name: service
+    port: 80
+    targetPort: 8082
+    protocol: TCP
+  selector:
+    app.super.cash/service: parkinglots-service

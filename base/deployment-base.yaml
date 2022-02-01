@@ -5,6 +5,7 @@ metadata:
 spec:
   template:
     spec:
+      restartPolicy: Always
       imagePullSecrets:
         - name: parkinglots-service
       containers:
