@@ -8,6 +8,10 @@ namespace: supercash-aws-sae1-prdt-ppd-dev
 namePrefix: supercash-
 nameSuffix: -aws-sae1-prdt-ppd-dev
 
+commonLabels:
+  segment: ppd
+  env: dev
+
 bases:
   - ../../base
 

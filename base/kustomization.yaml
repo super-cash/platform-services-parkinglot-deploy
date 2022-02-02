@@ -7,8 +7,6 @@ commonLabels:
   cloud: aws
   region: sae1
   type: prdt
-  segment: ppd
-  env: dev
 
 resources:
   - secret-gitlab-container-registry.yaml
