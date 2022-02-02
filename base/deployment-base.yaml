@@ -5,6 +5,7 @@ metadata:
 spec:
   template:
     spec:
+      securityContext: {}
       restartPolicy: Always
       imagePullSecrets:
         - name: parkinglots-service
@@ -13,4 +14,11 @@ spec:
           image: registry.gitlab.com/supercash/services/parkinglots-service
           imagePullPolicy: Always
           ports:
-            - containerPort: 8082
+            - name: service
+              containerPort: 8082
+          readinessProbe:
+            initialDelaySeconds: 1
+            periodSeconds: 60
+            httpGet:
+              path: /parkinglots/actuator/health
+              port: 8082

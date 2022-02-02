@@ -9,5 +9,3 @@ spec:
     port: 80
     targetPort: 8082
     protocol: TCP
-  selector:
-    app.super.cash/service: parkinglots-service
