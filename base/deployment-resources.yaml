@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: parkinglots-service
-  labels:
-    app.super.cash/service: parkinglots-service
 spec:
   replicas: 1
   strategy:
@@ -11,13 +9,7 @@ spec:
     rollingUpdate:
       maxSurge: 25%
       maxUnavailable: 25%
-  selector:
-    matchLabels:
-      app.super.cash/service: parkinglots-service
   template:
-    metadata:
-      labels:
-        app.super.cash/service: parkinglots-service
     spec:
       nodeSelector:
         super.cash-worker_group-name: services

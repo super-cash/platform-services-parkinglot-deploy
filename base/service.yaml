@@ -2,8 +2,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: parkinglots-service
-  labels:
-    app.super.cash/service: parkinglots-service
 spec:
   type: ClusterIP
   ports:

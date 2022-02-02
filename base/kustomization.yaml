@@ -1,6 +1,15 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
+commonLabels:
+  app.super.cash/service: parkinglots-service
+  product: supercash
+  cloud: aws
+  region: sae1
+  type: prdt
+  segment: ppd
+  env: dev
+
 resources:
   - secret-gitlab-container-registry.yaml
   - deployment-base.yaml
