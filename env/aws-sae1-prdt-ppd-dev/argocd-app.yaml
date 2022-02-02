@@ -8,6 +8,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
+    # NOTE: THIS MUST MATCH THE VERSION IN env/xyz/kustomization.yaml
     namespace: supercash-aws-sae1-prdt-ppd-dev
     server: https://kubernetes.default.svc
   project: default
