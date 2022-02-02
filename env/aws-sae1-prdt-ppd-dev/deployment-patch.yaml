@@ -11,9 +11,12 @@ spec:
             - name: SPRING_PROFILES_ACTIVE
               value: observed,dev
 
-            - name: CASH_SUPER_PLATFORM_CLIENT_ORCHESTRATOR_BASEURL
-              value: http://orchestrator:8501
-            
+            - name: DEBUG_ENV
+              value: true
+
+            - name: CASH_SUPER_PLATFORM_CLIENT_PAYMENT_BASEURL
+              value: http://supercash-payment-service-aws-sae1-prdt-ppd-dev/v2/payments
+ 
             # Postgres database connectivity from the secret created by the postgres object
 
             - name: SPRING_DATASOURCE_URL
