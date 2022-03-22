@@ -1,0 +1,5 @@
+# https://docs.gitlab.com/ee/ci/yaml/includes.html#single-string-or-array-of-multiple-values
+# Reusing the pipeline
+
+include:
+  remote: 'https://gitlab.com/marcellodesales/dockerized-cicd-pipeline/raw//develop/cicd/.k8s-deploy-argocd.yaml'
