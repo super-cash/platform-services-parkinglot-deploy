@@ -11,12 +11,12 @@ nameSuffix: -aws-sae1-prdt-ppd-qal
 commonLabels:
   env: qal
 
-bases:
-  - ../../base
 
 patchesStrategicMerge:
-  - deployment-patch.yaml
+- deployment-patch.yaml
 
 images:
-  - name: registry.gitlab.com/supercash/services/parkinglots-service
-    newTag: b33387a3-develop
+- name: registry.gitlab.com/supercash/services/parkinglots-service
+  newTag: 4e6ffe63-bugfix-env-adjustments-and-testing-hotfix
+resources:
+- ../../base
