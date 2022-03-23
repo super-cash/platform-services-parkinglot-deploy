@@ -9,15 +9,15 @@ namePrefix: supercash-
 nameSuffix: -aws-sae1-prdt-ppd-dev
 
 commonLabels:
-  segment: ppd
   env: dev
+  segment: ppd
 
-bases:
-  - ../../base
 
 patchesStrategicMerge:
-  - deployment-patch.yaml
+- deployment-patch.yaml
 
 images:
-  - name: registry.gitlab.com/supercash/services/parkinglots-service
-    newTag: a616e559-develop
+- name: registry.gitlab.com/supercash/services/parkinglots-service
+  newTag: a85bcb6d-develop
+resources:
+- ../../base
