@@ -18,7 +18,7 @@ patchesStrategicMerge:
 
 images:
 - name: registry.gitlab.com/supercash/services/parkinglot-service
-  newTag: 2121801c-develop
+  newTag: ec751944-develop
 - name: registry.gitlab.com/supercash/services/parkinglots-service
   newTag: a85bcb6d-develop
 resources:
