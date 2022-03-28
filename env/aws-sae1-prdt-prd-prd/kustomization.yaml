@@ -18,5 +18,5 @@ patchesStrategicMerge:
   - deployment-patch.yaml
 
 images:
-  - name: registry.gitlab.com/supercash/services/parkinglots-service
+  - name: registry.gitlab.com/supercash/services/parkinglot-service
     newTag: b33387a3-develop

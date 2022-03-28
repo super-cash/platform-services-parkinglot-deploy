@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parkinglots-service
+  name: parkinglot-service
 spec:
   template:
     spec:
       securityContext: {}
       restartPolicy: Always
       imagePullSecrets:
-        - name: parkinglots-service
+        - name: parkinglot-service
       containers:
-        - name: parkinglots-service
-          image: registry.gitlab.com/supercash/services/parkinglots-service
+        - name: parkinglot-service
+          image: registry.gitlab.com/supercash/services/parkinglot-service
           imagePullPolicy: Always
           ports:
             - name: service
@@ -20,5 +20,5 @@ spec:
             initialDelaySeconds: 1
             periodSeconds: 60
             httpGet:
-              path: /parkinglots/actuator/health
+              path: /parkinglot/actuator/health
               port: 8082

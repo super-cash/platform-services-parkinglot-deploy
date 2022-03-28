@@ -4,7 +4,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: supercash-parkinglots-service-aws-sae1-ppd-dev
+  name: supercash-parkinglot-service-aws-sae1-ppd-dev
   namespace: argocd
 spec:
   project: supercash-aws-sae1-prdt-ppd-dev
@@ -13,7 +13,7 @@ spec:
     namespace: supercash-aws-sae1-prdt-ppd-dev
     server: https://kubernetes.default.svc
   source:
-    repoURL: ssh://git@gitlab.com/supercash/services-deploy/parkinglots-service-deploy.git
+    repoURL: ssh://git@gitlab.com/supercash/services-deploy/parkinglot-service-deploy.git
     path: env/aws-sae1-prdt-ppd-dev
     targetRevision: HEAD
   syncPolicy:

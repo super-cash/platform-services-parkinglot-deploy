@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: parkinglots-service
+  name: parkinglot-service
 spec:
   template:
     spec:
       containers:
-        - name: parkinglots-service
+        - name: parkinglot-service
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: observed,db,ppd_qal
