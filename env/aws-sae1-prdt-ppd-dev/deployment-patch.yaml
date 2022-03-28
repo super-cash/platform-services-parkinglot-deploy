@@ -9,7 +9,7 @@ spec:
         - name: parkinglots-service
           env:
             - name: SPRING_PROFILES_ACTIVE
-              value: observed,dev
+              value: observed,db,ppd_qal
 
             - name: DEBUG_ENV
               value: "true"
