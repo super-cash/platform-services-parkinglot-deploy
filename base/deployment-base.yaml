@@ -20,5 +20,5 @@ spec:
             initialDelaySeconds: 1
             periodSeconds: 60
             httpGet:
-              path: /parkinglot/actuator/health
+              path: /parkinglots/actuator/health
               port: 8082
