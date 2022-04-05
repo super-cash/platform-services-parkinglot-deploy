@@ -17,6 +17,6 @@ patchesStrategicMerge:
 
 images:
 - name: registry.gitlab.com/supercash/services/parkinglot-service
-  newTag: 324f17af-bugfix-properly-calculate-ticket-grace-period
+  newTag: dd46569f-bugfix-properly-calculate-ticket-grace-period
 resources:
 - ../../base
