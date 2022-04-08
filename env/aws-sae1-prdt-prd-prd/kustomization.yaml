@@ -16,6 +16,7 @@ bases:
 
 patchesStrategicMerge:
   - deployment-patch.yaml
+  - deployment-resources-patch.yaml
 
 images:
   - name: registry.gitlab.com/supercash/services/parkinglot-service

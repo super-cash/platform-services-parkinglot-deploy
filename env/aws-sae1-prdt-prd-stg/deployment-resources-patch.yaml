@@ -15,9 +15,8 @@ spec:
       maxUnavailable: 25%
   template:
     spec:
-      # https://gitlab.com/supercash/platform/k8s/k8s-eks-setup/-/wikis/1.-Setup/Terraform-Cluster-Setup#design
       nodeSelector:
-        super.cash-worker_group-name: servicesppd
+        super.cash-worker_group-name: servicesprd
 #      resources:
 #        requests:
 #          memory: "64Mi"
