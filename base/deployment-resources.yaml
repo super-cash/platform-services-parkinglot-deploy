@@ -4,6 +4,10 @@ metadata:
   name: parkinglot-service
 spec:
   replicas: 1
+  # Set history replica set max size to 2 
+  # https://www.weave.works/blog/how-many-kubernetes-replicasets-are-in-your-cluster-
+  revisionHistoryLimit: 1
+
   strategy:
     type: RollingUpdate
     rollingUpdate:
