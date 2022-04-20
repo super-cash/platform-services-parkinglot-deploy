@@ -4,23 +4,22 @@ metadata:
   name: parkinglot-service
 spec:
   replicas: 1
-  # Set history replica set max size to 2 
-  # https://www.weave.works/blog/how-many-kubernetes-replicasets-are-in-your-cluster-
-  revisionHistoryLimit: 1
 
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
   template:
     spec:
+      # https://gitlab.com/supercash/platform/k8s/k8s-eks-setup/-/wikis/1.-Setup/Terraform-Cluster-Setup#design
       nodeSelector:
         super.cash-worker_group-name: servicesprd
-#      resources:
-#        requests:
-#          memory: "64Mi"
-#          cpu: "250m"
-#        limits:
-#          memory: "128Mi"
-#          cpu: "500m"
+
+      containers:
+        - name: parkinglot-service
+
+          # In order to support Horizontal Pod Autoscaler, we need to provide the amount of resources
+          # https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
+          resources:
+            requests:
+              memory: 400Mi
+              cpu: 500m
+            limits:
+              memory: 400Mi
+              cpu: 500m
