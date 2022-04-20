@@ -10,14 +10,15 @@ nameSuffix: -aws-sae1-prdt-prd-prd
 
 commonLabels:
   env: prd
-
-bases:
-  - ../../base
+  segment: prd
 
 patchesStrategicMerge:
   - deployment-patch.yaml
   - deployment-resources-patch.yaml
 
 images:
-  - name: registry.gitlab.com/supercash/services/parkinglot-service
-    newTag: b33387a3-develop
+- name: registry.gitlab.com/supercash/services/parkinglot-service
+  newTag: ec751944-develop
+
+resources:
+- ../../base
