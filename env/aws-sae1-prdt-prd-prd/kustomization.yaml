@@ -13,8 +13,8 @@ commonLabels:
   segment: prd
 
 patchesStrategicMerge:
-  - deployment-patch.yaml
-  - deployment-resources-patch.yaml
+- deployment-patch.yaml
+- deployment-resources-patch.yaml
 
 images:
 - name: registry.gitlab.com/supercash/services/parkinglot-service
@@ -22,3 +22,4 @@ images:
 
 resources:
 - ../../base
+- hpa.yaml
