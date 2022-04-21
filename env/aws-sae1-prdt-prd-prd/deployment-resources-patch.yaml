@@ -18,8 +18,8 @@ spec:
           # https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/
           resources:
             requests:
-              memory: 100Mi
-              cpu: 200m
-            limits:
               memory: 200Mi
               cpu: 300m
+            limits:
+              memory: 300Mi
+              cpu: 400m
